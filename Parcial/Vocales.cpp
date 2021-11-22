@@ -1,8 +1,6 @@
 #include <iostream>
 #include <cstdlib>
 #include<time.h>
-#include <cmath>
-#include <iomanip>
 using namespace std;
 int main()
 {
@@ -66,7 +64,7 @@ int main()
     {
         moda='u';
     }
-    
+
     
     promedio=an+en+in+on+un;
 
