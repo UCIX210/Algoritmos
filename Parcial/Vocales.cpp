@@ -6,12 +6,12 @@ int main()
 {
     int an ,en,in,on,un;
     an=en=in=on=un=0;
-    char moda;
-    char modas[5]={};
+    char moda[5]={};
+    bool repetido;
     char caracter[100]={};
     int num_aleatorio[100] = {};
-    int promedio;
-
+    int Porcentaje;
+    int max;
     srand(time(NULL));
     for (int i = 0; i < 100; i++)
     {
@@ -24,49 +24,53 @@ int main()
         switch (num_aleatorio[i])
         {
         case 97:
-            an=an+1;
+            an++;
             break;
         
         case 101:
-            en=en+1;
+            en++;
             break;
 
         case 105:
-            in=in+1;
+            in++;
             break;
 
         case 111:
-            on=on+1;
+            on++;
             break;
         case 117:
-            un=un+1;
+            un++;
             break;
         }
     }
 
-    if (an>en and an>in and an>on and an>un)
+    if (an>=en and an>=in and an>=on and an>=un)
     {
-        moda='a';
+        moda[0]='a';
+        max=an;
     }
-    else if (en>an and en>in and en>on and en>un)
+    if (en>=an and en>=in and en>=on and en>=un)
     {
-        moda='e';
+        moda[1]='e';
+        max=en;
     }
-    else if (in>an and in>en and in>on and in>un)
+    if (in>=an and in>=en and in>=on and in>=un)
     {
-        moda='i';
+        moda[2]='i';
+        max=in;
     }
-    else if (on>an and on>en and on>in and on>un)
+    if (on>=an and on>=en and on>=in and on>=un)
     {
-        moda='o';
+        moda[3]='o';
+        max=on;
     }
-    else if (un>an and un>en and un>in and un>on)
+    if (un>=an and un>=en and un>=in and un>=on)
     {
-        moda='u';
+        moda[4]='u';
+        max=un;
     }
 
-    
-    promedio=an+en+in+on+un;
+    Porcentaje=an+en+in+on+un;
 
     cout<<endl;
     cout<<endl;
@@ -81,9 +85,21 @@ int main()
     cout<<"-----"<<endl;
     cout<<endl;
     cout<<"La moda es: ";
-    cout<<moda<<endl;
-    cout <<"El porcentaje: " << promedio<< " %"<<endl;
+    for (int i = 0; i < 5; i++)
+    {
+        if (moda[i]!=0)
+        {
+            cout<< moda[i];
+            if (moda[i+1]!=0 and i<4)
+            {
+                cout<< ", ";
+            }
+            
+        }
+        
+    }
+    cout<<" ("<<max<<")"<<endl;
+    cout <<"El porcentaje: " << Porcentaje<< " %"<<endl;
     return 0;
 
 }
-///incompleto//
