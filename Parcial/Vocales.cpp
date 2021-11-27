@@ -7,7 +7,7 @@ int main()
     int an ,en,in,on,un;
     an=en=in=on=un=0;
     char moda[5]={};
-    bool repetido;
+    bool primero=true;
     char caracter[100]={};
     int num_aleatorio[100] = {};
     int Porcentaje;
@@ -90,13 +90,14 @@ int main()
         if (moda[i]!=0)
         {
             cout<< moda[i];
-            if (moda[i+1]!=0 and i<4)
-            {
-                cout<< ", ";
-            }
-            
+            primero=false;
         }
         
+        if (moda[i+1]!=0 and i<4 and primero==false)
+        {
+            cout<< ", ";
+        }
+    
     }
     cout<<" ("<<max<<")"<<endl;
     cout <<"El porcentaje: " << Porcentaje<< " %"<<endl;
